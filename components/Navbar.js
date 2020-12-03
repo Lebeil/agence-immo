@@ -1,25 +1,45 @@
-import React from 'react';
-import {
-    MDBNavbar, MDBNavbarNav, MDBNavItem, MDBCollapse, MDBIcon
-} from "mdbreact";
 
-const Navbar = () => {
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        flexGrow: 1,
+        color: 'blue',
+    },
+    bar: {
+        backgroundColor: 'white',
+    }
+}));
+
+export default function Navbar() {
+    const classes = useStyles();
+
     return (
-        <div>
-            <MDBNavbar color="indigo" dark expand="md">
-                <MDBCollapse id="navbarCollapse3" navbar>
-                    <MDBNavbarNav left>
-                        <MDBNavItem>
-                            <div className="nav-link">
-                                <MDBIcon icon="home" className="mr-1"/>
-                                Home
-                            </div>
-                        </MDBNavItem>
-                    </MDBNavbarNav>
-                </MDBCollapse>
-            </MDBNavbar>
+        <div className={classes.root}>
+            <AppBar position="static" className={classes.bar}>
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="primary" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        News
+                    </Typography>
+                    <Button color="primary">Login</Button>
+                </Toolbar>
+            </AppBar>
         </div>
     );
-};
-
-export default Navbar;
+}
