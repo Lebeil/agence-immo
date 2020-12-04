@@ -2,14 +2,14 @@ import Layout from "../components/layout";
 import React from "react";
 import api from '../auth/axios'
 import {PropertyVip} from "../components/propertyVip";
-import Typography from '@material-ui/core/Typography';
+import Carousel from "../components/carousel";
 
 
 export default function Home({propertiesVip}) {
   return (
     <>
      <Layout>
-         <Typography variant="h1">Home page</Typography>
+         <Carousel/>
          <PropertyVip properties={propertiesVip}/>
      </Layout>
     </>

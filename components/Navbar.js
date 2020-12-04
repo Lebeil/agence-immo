@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'blue',
     },
     bar: {
-        backgroundColor: 'white',
+        backgroundColor: 'transparent',
     }
 }));
 
@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className={classes.root}>
             <AppBar position="static" className={classes.bar}>
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="primary" aria-label="menu">
+                    <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
