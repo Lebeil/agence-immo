@@ -16,6 +16,7 @@ const useStyles = makeStyles({
         maxWidth: 380,
         margin: 'auto',
         width: '100%',
+        marginTop: 50,
     },
     grid: {
         flexGrow: 1,
@@ -23,20 +24,30 @@ const useStyles = makeStyles({
     media: {
         height: 200,
     },
+    zone: {
+        backgroundColor: '#F5F5F5',
+        width: '100%',
+        marginTop: 50,
+        paddingBottom: 50
+    },
     title: {
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: 20,
+    },
+    button: {
+        paddingTop: 30,
+        width: 200,
+        margin: 'auto'
     }
 });
 
-export const PropertyVip = ({ properties }) => {
+export const PropertyList = ({ properties }) => {
     const classes = useStyles();
 
     return (
         <>
-            <Container>
-                <Typography className={classes.title} variant="h3" gutterBottom>
-                    Biens sponsorisés
-                </Typography>
+            <Container maxWidth="xl" className={classes.zone}>
+                <Typography variant="h2" className={classes.title}>Notre catalogue</Typography>
                 <Grid container className={classes.grid} spacing={2}>
                     <Grid container item xs={12}>
                         {properties && properties.map((property) => (
@@ -70,6 +81,13 @@ export const PropertyVip = ({ properties }) => {
                     </Grid>
 
                 </Grid>
+                <div className={classes.button}>
+                    <Button variant="contained" color="primary"  disableElevation>
+                        Afficher plus ...
+                    </Button>
+                </div>
+
+
 
             </Container>
 
