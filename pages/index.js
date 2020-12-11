@@ -4,14 +4,18 @@ import api from '../auth/axios'
 import {PropertyVip} from "../components/propertyVip";
 import {PropertyList} from "../components/propertyList";
 import Carousel from "../components/carousel";
+import {Paper} from "@material-ui/core";
 
 
 export default function Home({propertiesVip, properties}) {
   return (
      <Layout>
-         <Carousel/>
-         <PropertyVip properties={propertiesVip}/>
-         <PropertyList properties={properties}/>
+         <Paper>
+             <Carousel/>
+             <PropertyVip properties={propertiesVip}/>
+             <PropertyList properties={properties}/>
+         </Paper>
+
      </Layout>
   )
 }
